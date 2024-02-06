@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html
+<html dir="rtl"
   lang="en"
   class="light-style layout-menu-fixed"
   dir="ltr"
