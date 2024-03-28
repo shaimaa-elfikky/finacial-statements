@@ -84,7 +84,7 @@
               </div>
               <!-- /Logo -->
               <h4 class="mb-2" >  wellcome to legal affairs   👋!</h4>
-              <p class="mb-4">Please sign-in to your account </p>
+             
 @livewire('admin.auth.admin-login-component')
 
 
