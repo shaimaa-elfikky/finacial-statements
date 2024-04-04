@@ -6,7 +6,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  , made with ❤️
+                  ❤️ made with
 
                 </div>
 

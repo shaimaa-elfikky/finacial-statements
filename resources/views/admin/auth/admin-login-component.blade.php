@@ -2,7 +2,7 @@
      <form class="mb-3" wire:submit.prevent="submit">
          <div class="mb-3">
              <label for="email" class="form-label">Email</label>
-             <input type="text"class="form-control" placeholder="Enter your email" autofocus wire:model.live='email' />
+             <input type="text"class="form-control" placeholder="Enter your email" autofocus wire:model='email' />
          </div>
          @error('email')
              <span class="text-danger">{{ $message }}</span>
@@ -15,6 +15,7 @@
                  <input type="password"class="form-control"
                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                      aria-describedby="password" wire:model="password" />
+                      <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
              </div>
          </div>
          @error('password')

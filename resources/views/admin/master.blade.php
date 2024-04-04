@@ -23,15 +23,15 @@
         <!-- Layout container -->
         <div class="layout-page">
           <!-- Navbar -->
-     @include('admin.partials.navbare')
+          @include('admin.partials.navbare')
 
 
 
           <div class="content-wrapper">
             <!-- Content -->
-       @yield('content')
+           @yield('content')
 
-@include('admin.partials.footer')
+           @include('admin.partials.footer')
 
 
             <div class="content-backdrop fade"></div>

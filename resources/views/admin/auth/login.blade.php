@@ -79,12 +79,12 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">الشئون القانونية</span>
+                  <span class="app-brand-text demo text-body fw-bolder"> القوائم المالية</span>
                 </a>
-              </div>
+    </div>
               <!-- /Logo -->
-              <h4 class="mb-2" >  wellcome to legal affairs   👋!</h4>
-             
+              <h5 class="mb-2"  >👋! wellcome to financial statements </h5>
+
 @livewire('admin.auth.admin-login-component')
 
 
