@@ -22,4 +22,16 @@
         window.addEventListener('createModalToggle', event => {
             $('#createModal').modal('toggle');
         })
+
+
+        window.addEventListener('updateModalToggle', event => {
+            $('#editModal').modal('toggle');
+        })
+
+
+        window.addEventListener('deleteModalToggle', event => {
+            $('#delteModal').modal('toggle');
+        })
     </script>
+
+

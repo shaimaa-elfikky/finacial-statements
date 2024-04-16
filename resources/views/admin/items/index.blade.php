@@ -26,6 +26,8 @@
                 @livewire('admin.items.items-data')
 
             </div>
+            @livewire('admin.items.items-update')
+            @livewire('admin.items.items-delete')
     </div>
 
 

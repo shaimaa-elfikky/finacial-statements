@@ -13,6 +13,13 @@ class ItemsCreate extends Component
     public $ids ;
 
 
+
+    public function mount()
+    {
+        // Fetch  items from the database
+        $this->ids = Item::pluck('name', 'id')->toArray();
+    }
+
     public function rules()
     {
         return [
@@ -21,11 +28,6 @@ class ItemsCreate extends Component
             'follow_item_id' => 'nullable|exists:items,id',
 
         ];
-    }
-    public function mount()
-    {
-        // Fetch  items from the database
-        $this->ids = Item::pluck('name', 'id')->toArray();
     }
     public function submit(){
 

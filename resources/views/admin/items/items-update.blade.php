@@ -1,10 +1,10 @@
 
      <!-- Modal -->
-                        <div class="modal fade" id="createModal" tabindex="-1" aria-hidden="true" wire:ignore.self>
+     <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true" wire:ignore.self>
                           <div class="modal-dialog" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel1">Add New Item </h5>
+                                <h5 class="modal-title" id="exampleModalLabel1">Edit Item </h5>
                                 <button
                                   type="button"
                                   class="btn-close"
@@ -42,7 +42,8 @@
                                                     <option value="{{ $id }}">{{ $name }}</option>
                                             @endforeach
                                             </select>
-                                   
+                                    {{-- <label  class="form-label">البند التابع له</label>
+                                    <input type="text"  class="form-control" placeholder="Enter Name" wire:model='follow_item_id'/> --}}
                                       @error('follow_item_id')
                                   <span class="text-danger">{{$message}}</span>
                                    @enderror
