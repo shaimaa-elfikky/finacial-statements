@@ -38,7 +38,7 @@
                                       <label  class="form-label">البند التابع له</label>
                                             <select class="form-select"  wire:model='follow_item_id'>
                                                 <option value="">اختر</option>
-                                            @foreach($followItems as $id => $name)
+                                            @foreach($ids as $id => $name)
                                                     <option value="{{ $id }}">{{ $name }}</option>
                                             @endforeach
                                             </select>

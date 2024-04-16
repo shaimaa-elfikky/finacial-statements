@@ -20,8 +20,8 @@
                 @foreach ($data as $record )
                     <tr>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$record->name}}</strong></td>
-                        <td>{{$record->code}}</td>
-                        <td>{{ optional($record->followItem)->name }}</td>
+                        <td>{{$record->code}}</td> 
+                        <td>{{ optional($record->following)->name }}</td>
                         <td>{{$record->calc_fl}}</td>
                         <td>
                           <div class="dropdown">
