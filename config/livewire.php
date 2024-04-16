@@ -155,4 +155,7 @@ return [
 
     'render_on_redirect' => false,
 
+
+    'pagination_theme' => 'bootstrap',
+
 ];

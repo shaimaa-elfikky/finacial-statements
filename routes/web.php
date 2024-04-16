@@ -21,8 +21,14 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 Route::prefix('admin')->name('admin.')->group(function () {
+   Route::middleware('admin')->group(function(){
+    //================================================================== INDEX PAGE
+        Route::view('', 'admin.index')->name('index');
 
-    Route::view('', 'admin.index')->name('index');
-    Route::view('login', 'admin.auth.login')->name('login');
+        //================================================================== ITEMS PAGE
+        Route::view('items', 'admin.items.index')->name('items');
+   });
+  //================================================================== LOGIN PAGE
+    Route::view('login', 'admin.auth.login')->middleware('guest')->name('login');
 });
 // require __DIR__.'/auth.php';

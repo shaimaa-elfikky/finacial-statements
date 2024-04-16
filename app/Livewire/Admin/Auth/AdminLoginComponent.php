@@ -18,7 +18,7 @@ class AdminLoginComponent extends Component
     public function rules()
     {
         return [
-            'email' => 'required|string|email',
+            'email' => 'required|string|email|min:10',
             'password' => 'required',
             'remember' => 'nullable',
         ];
@@ -30,7 +30,7 @@ class AdminLoginComponent extends Component
 
         if (!Auth::attempt(['email' => $this->email, 'password' => $this->password ], $this->remember)) {
             // Increment the login attempts
-            //RateLimiter::hit($this->throttleKey());
+             // RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
