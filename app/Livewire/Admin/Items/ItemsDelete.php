@@ -11,12 +11,12 @@ class ItemsDelete extends Component
     public $item ;
 
     protected $listeners =['itemDelete'];
-    
+
     public function itemDelete($id){
-   
-    //find id 
+
+    //find id
     $this->item = Item::find($id);
-  
+
     //show delete modal
     $this->dispatch('deleteModalToggle');
     }
@@ -28,11 +28,11 @@ class ItemsDelete extends Component
     //delete record
     $this->item->delete();
     $this->reset('item');
-   
-    
+
+
     //hide modal
     $this->dispatch('deleteModalToggle');
-    
+
     //refresh the bachground componenet
     $this->dispatch('refreshData')->to(ItemsData::class);
     }

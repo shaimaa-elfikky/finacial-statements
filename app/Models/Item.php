@@ -60,10 +60,15 @@ class Item extends Model
     /**
      * Define a self-referential relationship for child items.
      */
-    // public function childItems()
-    // {
-    //     return $this->hasMany(Item::class, 'follow_item_id');
-    // }
+    public function followed()
+    {
+        return $this->hasMany(Item::class, 'follow_item_id');
+    }
+
+    public function hasFollowers()
+    {
+        return $this->followed()->exists();
+    }
 
     /**
     * The attributes that should be cast.
