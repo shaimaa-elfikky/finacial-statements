@@ -42,7 +42,7 @@
                                                     <option value="{{ $id }}">{{ $name }}</option>
                                             @endforeach
                                             </select>
-                                   
+
                                       @error('follow_item_id')
                                   <span class="text-danger">{{$message}}</span>
                                    @enderror
@@ -51,7 +51,14 @@
 
                                   <div class="col-md-6 mb-3">
                                     <label  class="form-label"> طريقة احتسابه</label>
-                                    <input type="text"  class="form-control" placeholder="Enter Name" wire:model='calc_fl'/>
+                                    {{-- <input type="text"  class="form-control" placeholder="Enter Name" wire:model='calc_fl'/> --}}
+                                        <select class="form-select"  wire:model='calc_fl'>
+                                                <option value="">اختر</option>
+                                                <option value="0">تجميع نفس البند من الشركات</option>
+                                                <option value="1">قيمه نفس البند للقابضة</option>
+                                                <option value="2">   بنود اخرى</option>
+
+                                            </select>
                                           @error('calc_fl')
                                   <span class="text-danger">{{$message}}</span>
                                    @enderror

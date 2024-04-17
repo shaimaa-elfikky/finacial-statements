@@ -26,6 +26,7 @@ class ItemsCreate extends Component
             'name' => 'required',
             'code' => 'required|numeric',
             'follow_item_id' => 'nullable|exists:items,id',
+            'calc_fl' => 'nullable',
 
         ];
     }
@@ -35,12 +36,12 @@ class ItemsCreate extends Component
 
         //save data in db
         item::create($data);
-        //reset modal 
+        //reset modal
         $this->reset(['name','code','follow_item_id','calc_fl']);
 
         //hide modal
         $this->dispatch('createModalToggle');
-        
+
         //refresh the bachground componenet
         $this->dispatch('refreshData')->to(ItemsData::class);
     }

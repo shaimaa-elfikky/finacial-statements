@@ -20,9 +20,17 @@
                 @foreach ($data as $record )
                     <tr>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$record->name}}</strong></td>
-                        <td>{{$record->code}}</td> 
+                        <td>{{$record->code}}</td>
                         <td>{{ optional($record->following)->name }}</td>
-                        <td>{{$record->calc_fl}}</td>
+                        @if($record->calc_fl === 0)
+                        <td>تجميع نفس البند من الشركات</td>
+                        @elseif ($record->calc_fl == 1)
+                        <td>قيمه نفس البند للقابضة</td>
+                        @elseif ($record->calc_fl == 2)
+                        <td>بنود اخرى</td>
+                        @else
+                        <td></td>
+                        @endif
                         <td>
                           <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

@@ -11,7 +11,7 @@ class ItemsUpdate extends Component
     public $ids;
 
     protected $listeners=['itemUpdate'];
-    
+
 
     public function mount()
     {
@@ -19,11 +19,11 @@ class ItemsUpdate extends Component
         $this->ids = Item::pluck('name', 'id')->toArray();
     }
 
-    
+
 
     public function itemUpdate($id){
 
-    //fill modal with data with same id 
+    //fill modal with data with same id
     $this->item = Item::find($id);
     $this->name = $this->item->name ;
     $this->code = $this->item->code ;
@@ -40,6 +40,7 @@ class ItemsUpdate extends Component
             'name' => 'required',
             'code' => 'required|numeric',
             'follow_item_id' => 'nullable|exists:items,id',
+            'calc_fl' => 'nullable',
 
         ];
     }
@@ -50,11 +51,11 @@ class ItemsUpdate extends Component
 
     //save data in db
     $this->item->update($data);
-    //reset modal 
-    
+    //reset modal
+
     //hide modal
     $this->dispatch('updateModalToggle');
-    
+
     //refresh the bachground componenet
     $this->dispatch('refreshData')->to(ItemsData::class);
     }
