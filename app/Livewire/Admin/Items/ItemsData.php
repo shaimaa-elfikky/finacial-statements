@@ -13,6 +13,8 @@ class ItemsData extends Component
 
     public $search ;
 
+
+
     protected $listeners = ['refreshData'=> '$refresh'];
     public function updatingSearch(){
         $this->resetPage();
