@@ -9,11 +9,16 @@ use Livewire\Component;
 class ItemsCreate extends Component
 {
 
-
-
     public  $name , $code ,$follow_item_id ,$calc_fl ;
-    public $followItems ;
+    public $ids ;
 
+
+
+    public function mount()
+    {
+        // Fetch  items from the database
+        $this->ids = Item::pluck('name', 'id')->toArray();
+    }
 
     public function rules()
     {
@@ -24,18 +29,14 @@ class ItemsCreate extends Component
 
         ];
     }
-    public function mount()
-    {
-        // Fetch follow items from the database
-        $this->followItems = Item::pluck('name', 'id')->toArray();
-    }
     public function submit(){
 
         $data = $this->validate();
 
         //save data in db
         item::create($data);
-        $this->reset($data);
+        //reset modal 
+        $this->reset(['name','code','follow_item_id','calc_fl']);
 
         //hide modal
         $this->dispatch('createModalToggle');

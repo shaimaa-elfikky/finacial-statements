@@ -20,8 +20,8 @@
                 @foreach ($data as $record )
                     <tr>
                         <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$record->name}}</strong></td>
-                        <td>{{$record->code}}</td>
-                        <td>{{ optional($record->followItem)->name }}</td>
+                        <td>{{$record->code}}</td> 
+                        <td>{{ optional($record->following)->name }}</td>
                         <td>{{$record->calc_fl}}</td>
                         <td>
                           <div class="dropdown">
@@ -29,11 +29,11 @@
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-1"></i> Edit</a
+                              <a class="dropdown-item" href="#" wire:click.prevent="$dispatch('itemUpdate', { id: {{ $record->id }} })">
+                                <i class="bx bx-edit-alt me-1"></i> Edit</a
                               >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-1"></i> Delete</a
+                              <a class="dropdown-item" href="javascript:void(0);" wire:click.prevent="$dispatch('itemDelete', { id: {{ $record->id }} })">
+                                <i class="bx bx-trash me-1"></i> Delete</a
                               >
                             </div>
                           </div>

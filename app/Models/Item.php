@@ -52,7 +52,7 @@ class Item extends Model
     protected $guarded = ['id'];
 
 
-    public function parentItem()
+    public function following()
     {
         return $this->belongsTo(Item::class, 'follow_item_id');
     }
@@ -60,10 +60,10 @@ class Item extends Model
     /**
      * Define a self-referential relationship for child items.
      */
-    public function childItems()
-    {
-        return $this->hasMany(Item::class, 'follow_item_id');
-    }
+    // public function childItems()
+    // {
+    //     return $this->hasMany(Item::class, 'follow_item_id');
+    // }
 
     /**
     * The attributes that should be cast.
